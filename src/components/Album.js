@@ -9,8 +9,10 @@ useEffect(()=>{
     console.log(response)    
     response['data'].map((image)=>{
             const {alt_description, urls, created_at}=image;
-            const imageYear=new Date(image.created_at).getFullYear()
-            if([imageYear] in sortedPhotos){
+            const imageYear=new Date(image.created_at).getFullYear();
+            console.log("here1",imageYear in sortedPhotos )
+            if(imageYear in sortedPhotos){
+                console.log("here")
                 setSortedPhotos(sortedPhotos=>({...sortedPhotos, [imageYear]:[...sortedPhotos.imageYear, image]}))
             }
             else{
@@ -27,6 +29,12 @@ useEffect(()=>{
 
   return (
     <div className="image-container">
+        {Object.keys(sortedPhotos).length?(
+            Object.keys(sortedPhotos).map((year)=>(
+            <h3>{year}</h3>
+            {sortedPhotos.year.map((image)=><img className="image-view" src={image.urls.small} alt={image.alt_description} />))}
+            ))
+        ):null}
       {photos.length?photos.map((image)=><img className="image-view" src={image.urls.small} alt={image.alt_description} />):null}
     </div>
   );
