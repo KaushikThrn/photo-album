@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+body {
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.image-view{
+  width: 200px;
+  height: 200px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image-container{
+  position: relative;
+  top: 60px;
+  left: 90px;
+  overflow-y: scroll;
+  height: 95vh;
+  display: flex;
+  flex-flow: row wrap
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  z-index: 1;
+  background-color: white;
+  width: 100%;
+  height: 50px;
+}
+
+.input-box{
+  width: 380px;
+  border: none;
+  margin-left: 10px;
+  background-color: #f1f3f4;
+}
+
+.search-icon{
+  margin-left: 5px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-left: 300px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  height: 35px;
+  width: 500px;
+  background-color: #f1f3f4;
+}
+
+.input-box:focus{
+  outline: none;
+}
+
+.header-icons{
+  margin-left: 50px;
+  height: 20px;
+  width: 20px;
+}
+
+.sidebar-icons{
+  height: 20px;
+  width: 20px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.sidebar__icon-name{
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+.header__icon-name {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.sidebar {
+  top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: absolute;
+  height: 100%;
+  width: 70px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
